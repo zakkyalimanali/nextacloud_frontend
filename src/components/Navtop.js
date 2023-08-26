@@ -31,8 +31,9 @@ export default function Navtop() {
                         <NavDropdown  title="Navigation">
                             
                             <NavDropdown.Item><NavLink  to="staffhome" >Staff Home</NavLink></NavDropdown.Item>
+                            <NavDropdown.Item><NavLink  to="stafflist" >Staff</NavLink></NavDropdown.Item>
                             <NavDropdown.Item><NavLink  to="brandslist" >Brands</NavLink></NavDropdown.Item>
-                            <NavDropdown.Item><NavLink  to="#">Stores</NavLink></NavDropdown.Item>
+                            <NavDropdown.Item><NavLink  to="storeslist">Stores</NavLink></NavDropdown.Item>
                             <NavDropdown.Item><NavLink  to="#">Items</NavLink></NavDropdown.Item>
                             {/* <NavDropdown.Item>   {user ? ( <Button className="me-auto mt-2" variant="secondary" onClick={logoutUser}>Logout</Button>
                             ) : (

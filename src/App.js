@@ -7,6 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BrandsList from './pages/brands/BrandsList';
 import BrandsAdd from './pages/brands/BrandsAdd';
 import BrandsEdit from './pages/brands/BrandsEdit';
+import StoresList from './pages/stores/StoresList';
+import StoreAdd from './pages/stores/StoreAdd';
+import StoreEdit from './pages/stores/StoreEdit';
+import StaffEdit from './pages/staff/StaffEdit';
+import StaffList from './pages/staff/StaffList';
+import StaffAdd from './pages/staff/StaffAdd';
 
 function App() {
   return (
@@ -22,9 +28,15 @@ function App() {
             {/* <Route  element={<PrivateRoutes/>}> */}
               {/* <Route path='/' element={<Home/>} exact/> */}
               <Route path='staffhome' element={<StaffHome/>} exact/>
-              <Route path='brandslist' element={<BrandsList/>} exact/>
-              <Route path='brandsadd' element={<BrandsAdd/>} exact/>
-              <Route path='brandsedit/:id' element={<BrandsEdit/>} exact/>
+              <Route path='brandslist' element={<BrandsList/>}/>
+              <Route path='brandsadd' element={<BrandsAdd/>}/>
+              <Route path='brandsedit/:id' element={<BrandsEdit/>}/>
+              <Route path='storeslist' element={<StoresList/>}/>
+              <Route path='storesadd' element={<StoreAdd/>}/>
+              <Route path='storesedit/:id' element={<StoreEdit/>}/>
+              <Route path='stafflist' element={<StaffList/>}/>
+              <Route path='staffadd' element={<StaffAdd/>}/>
+              <Route path='staffedit/:id' element={<StaffEdit/>}/>
               {/* <Route path="brandslist " element={<BrandsList/>}/>
               <Route path="brandsadd " element={<BrandsAdd/>}/>
               <Route path="brandsedit " element={<BrandsEdit/>}/> */}

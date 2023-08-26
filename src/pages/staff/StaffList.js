@@ -96,12 +96,13 @@ function StaffList() {
       useEffect(() => {
         const data = staffs.map((staff) => {
             const kedai_store = stores.find((store) => store.id === staff.store);
-            // const employee = employee_staff ? `${employee_staff.staff_name} (${employee_staff.staff_position})` : '';
+            const kedai = kedai_store ? `${kedai_store.store_name}` : '';
+            // const kedai = kedai_store ? `${kedai_store.staff_name} (${employee_staff.staff_position})` : '';
             return {
                 id : staff.id,
                 staff_name : staff.staff_name,
                 staff_position : staff.staff_position,
-                store: kedai_store ,
+                store: kedai,
                 edit: <Link to={`/staffedit/${staff.id}`}><FontAwesomeIcon icon={faPen } /></Link> ,
                 delete : (<FontAwesomeIcon
                 icon={faTrash}
@@ -119,9 +120,9 @@ function StaffList() {
     <h1 className="row justify-content-center mt-3">Staff List</h1>
       <div className="mt-4 col-md-10 m row justify-content-center">
           
-  {/* <Button className="middle col-2 mb-4" variant="secondary" href="/storesadd">
-      Store Add
-  </Button> */}
+  <Button className="middle col-2 mb-4" variant="secondary" href="/staffadd">
+      Staff Add
+  </Button>
   {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
   {/* <div className="text-end"><input type="text" /></div> */}
       

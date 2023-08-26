@@ -13,6 +13,9 @@ import StoreEdit from './pages/stores/StoreEdit';
 import StaffEdit from './pages/staff/StaffEdit';
 import StaffList from './pages/staff/StaffList';
 import StaffAdd from './pages/staff/StaffAdd';
+import ItemsList from './pages/items/ItemsList';
+import ItemsAdd from './pages/items/ItemsAdd';
+import ItemsEdit from './pages/items/ItemsEdit';
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
               <Route path='storeslist' element={<StoresList/>}/>
               <Route path='storesadd' element={<StoreAdd/>}/>
               <Route path='storesedit/:id' element={<StoreEdit/>}/>
+              <Route path='itemslist' element={<ItemsList/>}/>
+              <Route path='itemsadd' element={<ItemsAdd/>}/>
+              <Route path='itemsedit/:id' element={<ItemsEdit/>}/>
               <Route path='stafflist' element={<StaffList/>}/>
               <Route path='staffadd' element={<StaffAdd/>}/>
               <Route path='staffedit/:id' element={<StaffEdit/>}/>

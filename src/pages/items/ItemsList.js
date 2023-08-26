@@ -76,14 +76,8 @@ function ItemsList() {
         },
         {
           name: 'Item',
-          selector: (row) => row.item,
+          selector: (row) => row.item_name,
           sortable: true,
-        },
-        {
-          name: 'Item Type',
-          selector: (row) => row.type_item ,
-          sortable: true,
-        //   width: '10rem'
         },
         {
           name: 'Category',
@@ -119,11 +113,11 @@ function ItemsList() {
         },
        
         
-        // {
-        //   name: 'Edit',
-        //   selector: (row) => row.edit,
-        //   width: '6rem'
-        // },
+        {
+          name: 'Edit',
+          selector: (row) => row.edit,
+          width: '6rem'
+        },
         {
           name: 'Delete',
           selector: (row) => row.delete,
@@ -146,14 +140,13 @@ function ItemsList() {
             // const employee = employee_staff ? `${employee_staff.staff_name} (${employee_staff.staff_position})` : '';
             return {
                 id : item.id,
-                item : item.item,
-                type_item : item.type_item,
+                item_name : item.item_name,
                 category  : item.category ,
                 brand : branding,
                 store : kedai,
                 identification_code : item.identification_code,
                 size : item.size,
-                // edit: <Link to={`/storesedit/${store.id}`}><FontAwesomeIcon icon={faPen } /></Link> ,
+                edit: <Link to={`/itemsedit/${item.id}`}><FontAwesomeIcon icon={faPen } /></Link> ,
                 delete : (<FontAwesomeIcon
                 icon={faTrash}
                 onClick={() => onDelete(item.id)}
@@ -169,9 +162,9 @@ function ItemsList() {
     <h1 className="row justify-content-center mt-3">Item List</h1>
       <div className="mt-4 col-md-10 m row justify-content-center">
           
-  {/* <Button className="middle col-2 mb-4" variant="secondary" href="/staffadd">
+  <Button className="middle col-2 mb-4" variant="secondary" href="/itemsadd">
       Item Add
-  </Button> */}
+  </Button>
   {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
   {/* <div className="text-end"><input type="text" /></div> */}
       

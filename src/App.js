@@ -16,6 +16,10 @@ import StaffAdd from './pages/staff/StaffAdd';
 import ItemsList from './pages/items/ItemsList';
 import ItemsAdd from './pages/items/ItemsAdd';
 import ItemsEdit from './pages/items/ItemsEdit';
+import {AuthProvider} from './context/AuthContext'
+import PrivateRoutes from './utils/PrivateRoutes';
+import LoginPage from './pages/LoginPage';
+import RegisterForm from './pages/Register';
 
 function App() {
   return (
@@ -25,10 +29,11 @@ function App() {
         <Routes>
         {/* <Route path='newhome' element={<NewHome/>} /> */}
         <Route path= '/' element={<PublicHome/>} />
+        <Route path= 'register' element={<RegisterForm/>}/>
           {/* <Route element={<AuthProvider><Layout/></AuthProvider>}> */}
-          <Route element={<Layout/>}>
-            {/* <Route element={<LoginPage/>} path="/loginpage"/> */}
-            {/* <Route  element={<PrivateRoutes/>}> */}
+          <Route element={<AuthProvider><Layout/></AuthProvider>}>
+            <Route element={<LoginPage/>} path="/loginpage"/>
+            <Route  element={<PrivateRoutes/>}>
               {/* <Route path='/' element={<Home/>} exact/> */}
               <Route path='staffhome' element={<StaffHome/>} exact/>
               <Route path='brandslist' element={<BrandsList/>}/>
@@ -48,8 +53,8 @@ function App() {
               <Route path="brandsedit " element={<BrandsEdit/>}/> */}
               {/* <Route path="incidentinvestigationadd" element={<IncidentInvestigationAdd/>}/>
               <Route path="incidentinvestigationadd" element={<IncidentInvestigationAdd/>}/> */}
-            {/* </Route>
-            <Route element={<LoginPage/>} path="/loginpage"/> */}
+            </Route>
+            <Route element={<LoginPage/>} path="/loginpage"/>
           </Route>
         </Routes>
       </BrowserRouter>

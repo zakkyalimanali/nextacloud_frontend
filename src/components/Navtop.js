@@ -18,7 +18,7 @@ export default function Navtop() {
     const { user , logoutUser} = useContext(AuthContext);
     return (
         <div>
-    <Navbar className="p-3 sticky-top" expand="lg" style={{ backgroundImage: 'linear-gradient(to bottom left, lightblue, royalblue)' }}>
+    <Navbar className="p-3 sticky-top" expand="lg" style={{ backgroundImage: '#F4F5F7' }}>
 
                 <Navbar.Brand><NavLink to="/">South City Shops</NavLink></Navbar.Brand>
             
@@ -28,29 +28,41 @@ export default function Navtop() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>
-                        <NavDropdown  title="Navigation">
+
+                    <NavLink className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}  to="staffhome" >Staff Home</NavLink>
+                    <NavLink  className="mx-2" style={{color: '#E15047' , textDecoration:'none'}} to="stafflist" >Staff</NavLink>
+                    <NavLink  className="mx-2" style={{color: '#E15047' , textDecoration:'none'}} to="brandslist" >Brands</NavLink>
+                    <NavLink   className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}to="storeslist">Stores</NavLink>
+                    <NavLink   className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}to="itemslist">Items</NavLink>
+
+                        {/* <NavDropdown  title="Navigation">
                             
                             <NavDropdown.Item><NavLink  to="staffhome" >Staff Home</NavLink></NavDropdown.Item>
                             <NavDropdown.Item><NavLink  to="stafflist" >Staff</NavLink></NavDropdown.Item>
                             <NavDropdown.Item><NavLink  to="brandslist" >Brands</NavLink></NavDropdown.Item>
                             <NavDropdown.Item><NavLink  to="storeslist">Stores</NavLink></NavDropdown.Item>
-                            <NavDropdown.Item><NavLink  to="itemslist">Items</NavLink></NavDropdown.Item>
+                            <NavDropdown.Item><NavLink  to="itemslist">Items</NavLink></NavDropdown.Item> */}
                             {/* <NavDropdown.Item>   {user ? ( <Button className="me-auto mt-2" variant="secondary" onClick={logoutUser}>Logout</Button>
                             ) : (
                             <Button className="me-auto mt-2"  variant="secondary"><Link to="/loginpage">Login</Link></Button>
                             )
                             }</NavDropdown.Item> */}
-                        </NavDropdown>
+                        {/* </NavDropdown> */}
                     </Nav>
-
-                    </Navbar.Collapse>
-           
-                {/* <div className="me-5" style={{float : "right"}}> */}
-                {user ? ( <Button className="me-auto mt-2" variant="secondary" onClick={logoutUser}>Logout</Button>
+                    {user ? ( <Button className="me-auto mt-2" variant="secondary" onClick={logoutUser}>Logout</Button>
                     ) : (
                     <Button className="me-auto mt-2"  variant="secondary"><Link to="/loginpage">Login</Link></Button>
                     )
                     }
+
+                    </Navbar.Collapse>
+           
+                {/* <div className="me-5" style={{float : "right"}}> */}
+                {/* {user ? ( <Button className="me-auto mt-2" variant="secondary" onClick={logoutUser}>Logout</Button>
+                    ) : (
+                    <Button className="me-auto mt-2"  variant="secondary"><Link to="/loginpage">Login</Link></Button>
+                    )
+                    } */}
                 {/* </div> */}
             </Navbar>
         </div>

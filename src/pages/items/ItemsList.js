@@ -157,6 +157,77 @@ function ItemsList() {
         setRecords(data);
       }, [items]); 
 
+      // const handleFilter = (e) => {
+      //   const searchText = e.target.value.toLowerCase();
+      
+      //   if (searchText === '') {
+      //     // If the search text is empty, fetch all incidents again
+      //     fetchItems();
+      //   } else {
+      //     const newData = items
+      //       .map((item) => {
+      //       const brand_name = brands.find(
+      //         (brand) => brand.id === item.brand
+      //       )?.brand_name;
+      //       return {
+      //         ...item,
+      //         brand_name,
+      //       };
+            
+      //     })
+      //     .map((item) => {
+      //       const store_name = stores.find(
+      //         (store) => store.id === item.store
+      //       )?.store_name;
+      //       return {
+      //         ...item,
+      //         store_name,
+      //       };
+            
+      //     }).filter((item) => {
+      //         const incidentProps = Object.values(item);
+      //         for (let i = 0; i < incidentProps.length; i++) {
+      //           if (
+      //             incidentProps[i] &&
+      //             incidentProps[i].toString().toLowerCase().includes(searchText)
+      //           ) {
+      //             return true; // Return true if a match is found in any property
+      //           }
+      //         }
+      //         return false; // Return false if no match is found in any property
+      //       });
+      //     setItems(newData);
+      //   }
+      // };
+
+      const handleFilter = (e) => {
+        const searchText = e.target.value.toLowerCase();
+      
+        if (searchText === '') {
+          // If the search text is empty, fetch all incidents again
+          fetchItems();
+        } else {
+          const newData = items.map((item) => {
+            const brand_name = brands.find((brand) => brand.id === item.brand)?.brand_name || '';
+            const store_name = stores.find((store) => store.id === item.store)?.store_name || '';
+      
+            return {
+              ...item,
+              brand_name,
+              store_name,
+            };
+          }).filter((item) => {
+            const incidentProps = Object.values(item);
+            return incidentProps.some((prop) =>
+              prop && prop.toString().toLowerCase().includes(searchText)
+            );
+          });
+      
+          setItems(newData);
+        }
+      };
+  
+
   return (
     <div className="row justify-content-center"> 
     <h1 className="row justify-content-center mt-3">Item List</h1>
@@ -165,6 +236,7 @@ function ItemsList() {
   <Button className="middle col-2 mb-4" variant="secondary" href="/itemsadd">
       Item Add
   </Button>
+  <div className="col-md-2 mb-4"><input className="text-center" type="text" placeholder="Search..." onChange={handleFilter}/></div>
   {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
   {/* <div className="text-end"><input type="text" /></div> */}
       

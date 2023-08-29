@@ -137,6 +137,9 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+axios.defaults.baseURL = 'http://localhost:8000';
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -150,14 +153,33 @@ function RegistrationForm() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post('http://localhost:8000/api/register/', formData);
+  //     console.log('Response:', response);
+  //     console.log('Registration successful:', response.data);
+  //     // Add code to redirect user or show a success message
+  //   } catch (error) {
+  //     console.error('Registration error:', error.response.data);
+  //     console.error('Error:', error);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/register/', formData);
-      console.log('Registration successful:', response.data);
-      // Add code to redirect user or show a success message
+      const response = await axios.post('/api/register/', formData);
+      console.log('Response:', response);
+  
+      if (response && response.data) {
+        console.log('Registration successful:', response.data);
+        // Add code to redirect user or show a success message
+      } else {
+        console.error('Registration response does not contain data:', response);
+      }
     } catch (error) {
-      console.error('Registration error:', error.response.data);
+      console.error('Registration error:', error.response ? error.response.data : error.message);
     }
   };
 
@@ -166,7 +188,9 @@ function RegistrationForm() {
       <input type="text" name="username" placeholder="Username" onChange={handleChange} />
       <input type="email" name="email" placeholder="Email" onChange={handleChange} />
       <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+      {/* <Link to="/loginpage"><button type="submit">Register</button></Link> */}
       <button type="submit">Register</button>
+      <Link to="/loginpage">Login Page</Link>
     </form>
     
   );

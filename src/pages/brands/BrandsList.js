@@ -90,7 +90,32 @@ function BrandsList() {
             }
         })
         setRecords(data);
-      }, [brands]); 
+      }, [brands]);
+      
+      
+      const handleFilter = (e) => {
+        const searchText = e.target.value.toLowerCase();
+      
+        if (searchText === '') {
+          // If the search text is empty, fetch all incidents again
+          fetchBrands();
+        } else {
+          const newData = brands.filter((brand) => {
+              const incidentProps = Object.values(brand);
+              for (let i = 0; i < incidentProps.length; i++) {
+                if (
+                  incidentProps[i] &&
+                  incidentProps[i].toString().toLowerCase().includes(searchText)
+                ) {
+                  return true; // Return true if a match is found in any property
+                }
+              }
+              return false; // Return false if no match is found in any property
+            });
+          setBrands(newData);
+        }
+      };
+  
 
   return (
     <div className="row justify-content-center"> 
@@ -100,6 +125,7 @@ function BrandsList() {
   <Button className="middle col-2 mb-4" variant="secondary" href="/brandsadd">
       Brands Add
   </Button>
+  <div className="col-md-2 mb-4"><input className="text-center" type="text" placeholder="Search..." onChange={handleFilter}/></div>
   {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
   {/* <div className="text-end"><input type="text" /></div> */}
       

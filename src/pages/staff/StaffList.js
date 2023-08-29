@@ -114,6 +114,38 @@ function StaffList() {
         setRecords(data);
       }, [staffs]);
 
+      const handleFilter = (e) => {
+        const searchText = e.target.value.toLowerCase();
+      
+        if (searchText === '') {
+          // If the search text is empty, fetch all incidents again
+          fetchStaff();
+        } else {
+          const newData = staffs.map((staff) => {
+                  const store_name = stores.find(
+                    (store) => store.id === staff.store
+                  )?.store_name;
+                  return {
+                    ...staff,
+                    store_name,
+                  };
+                }).filter((staff) => {
+              const incidentProps = Object.values(staff);
+              for (let i = 0; i < incidentProps.length; i++) {
+                if (
+                  incidentProps[i] &&
+                  incidentProps[i].toString().toLowerCase().includes(searchText)
+                ) {
+                  return true; // Return true if a match is found in any property
+                }
+              }
+              return false; // Return false if no match is found in any property
+            });
+          setStaffs(newData);
+        }
+      };
+  
+
 
   return (
     <div className="row justify-content-center"> 
@@ -123,6 +155,7 @@ function StaffList() {
   <Button className="middle col-2 mb-4" variant="secondary" href="/staffadd">
       Staff Add
   </Button>
+  <div className="col-md-2 mb-4"><input className="text-center" type="text" placeholder="Search..." onChange={handleFilter}/></div>
   {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
   {/* <div className="text-end"><input type="text" /></div> */}
       

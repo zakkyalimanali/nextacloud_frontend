@@ -58,57 +58,59 @@ function BrandsEdit() {
 }
   
   return (
-    <div className="container pb-5">
-    <div className="row">
-      <div className= "col-md-4"></div>
-      <div className="col-md-4 ">
-        <h3 className="float-left mt-3">Update Brands</h3>
-        
-        <Form onSubmit={onSubmit} 
-        className="mt-4">
-          <Form.Group className="mb-3" controlId="formName">
-            <Form.Label>Brand Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Brand Name"
-              value={brand_name}
-              onChange={(e) => setBrandName(e.target.value)}
-            />
-          </Form.Group>
+    <div className="brandpage">
+      <div className="container pb-5">
+      <div className="row">
+        <div className= "col-md-4"></div>
+        <div className="col-md-4 ">
+          <h3 className="float-left mt-3">Update Brands</h3>
           
-         
-         
-          <Form.Group className="mb-3" controlId="formName">
-            <Form.Label>Type of Brand</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Type of Brand"
-              value={type_of_brand}
-              onChange={(e) => setTypeOfBrand(e.target.value)}
-            />
-          </Form.Group>
-        
+          <Form onSubmit={onSubmit} 
+          className="mt-4">
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Label>Brand Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Brand Name"
+                value={brand_name}
+                onChange={(e) => setBrandName(e.target.value)}
+              />
+            </Form.Group>
+            
           
-          <div className="mt-3 float-right">
-            {/* <Button
-              variant="primary"
-              type="submit"
-              onClick={onSubmit}
-              className="mx-2"
-            >
-              Save
-            </Button> */}
-            <Button
-                    variant="warning"
-                    type="button"
-                    onClick={(e) => onUpdate(id)}
-                    className="mx-2"
-                  >
-                    Update
-                  </Button>
-          </div>
-        </Form>    
-      </div>            
+          
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Label>Type of Brand</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Type of Brand"
+                value={type_of_brand}
+                onChange={(e) => setTypeOfBrand(e.target.value)}
+              />
+            </Form.Group>
+          
+            
+            <div className="mt-3 float-right">
+              {/* <Button
+                variant="primary"
+                type="submit"
+                onClick={onSubmit}
+                className="mx-2"
+              >
+                Save
+              </Button> */}
+              <Button
+                      variant="warning"
+                      type="button"
+                      onClick={(e) => onUpdate(id)}
+                      className="mx-2"
+                    >
+                      Update
+                    </Button>
+            </div>
+          </Form>    
+        </div>            
+      </div>
     </div>
   </div>
   )

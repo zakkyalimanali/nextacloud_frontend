@@ -6,12 +6,35 @@
     width: 100%;
     height: 100vh;
   }
+
+
+/* 
   .LoginImage {
     width: 100%;
     height: 89vh;
-  }
+  } */
 
-  .HomeHeroText {
+  .LoginImage {
+    width: 100%;
+    /* height: auto; 
+    max-height: 89vh; */
+    height: 89vh;
+}
+
+.LoginHeroText {
+    background-color: rgba(250, 249, 246, 0.8);
+    max-width: 90%; 
+    width: 40rem;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem; /* Add some padding for better readability */
+    text-align: center; /* Center-align the content */
+}
+
+  /* .HomeHeroText {
     background-color: rgba(250, 249, 246, 0.8);
     width: 35rem;
     border-radius: 25px;
@@ -19,14 +42,27 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
+
+  .HomeHeroText {
+    background-color: rgba(250, 249, 246, 0.8);
+    max-width: 90%; 
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem; /* Add some padding for better readability */
+    text-align: center; /* Center-align the content */
+}
+
 
   .HeroText {
     font-Size: 3rem;
     color: #E15047;
   }
 
-  .LoginHeroText{
+  /* .LoginHeroText{
     background-color: rgba(250, 249, 246, 0.8);
     width: 40rem;
     border-radius: 25px;
@@ -34,4 +70,115 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  } */
+
+
+
+  .brandpage{
+    /* position: fixed; */
+    /* position: fixed; */
+    /* position: absolute; */
+    position: relative;
+    /* position:sticky; */
+   
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: lightblue;
+    background-size: cover;
+    overflow: hidden;
   }
+
+  .itempage{
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: lightpink;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .itemeditpage{
+
+    left: 0;
+    width: 100%;
+
+    background-color: lightpink;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .staffpage{
+    /* position: fixed; */
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: lightgreen;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .staffeditpage{
+    left: 0;
+    width: 100%;
+    background-color: lightgreen;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .storepage{
+    position: relative;
+    /* position: absolute; */
+    /* position: relative; */
+    /* position:sticky; */
+   
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: lightsalmon;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .storeeditpage{
+  
+    left: 0;
+    width: 100%;
+
+    background-color: lightsalmon;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  @media (max-width: 770px) {
+    /* .brandpage{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+    .itempage{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+    .staffpage{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+    .storepage{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+    .HomeHeroText {
+        max-width: 100%; */
+  }
+  .LoginHeroText {
+    max-width: 100%; /* Adjust the maximum width for smaller screens */
+}
+
+

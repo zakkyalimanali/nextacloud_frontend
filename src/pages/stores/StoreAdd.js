@@ -48,11 +48,12 @@ function StoreAdd() {
   }
 
   return (
+    <div className="storepage">
     <div className="container pb-5">
     <div className="row">
       <div className= "col-md-4"></div>
       <div className="col-md-4 ">
-        <h3 className="float-left mt-3">Create a JSA</h3>
+        <h3 className="float-left mt-3">Create a Store</h3>
         
         <Form onSubmit={onSubmit} 
         className="mt-4">
@@ -106,6 +107,7 @@ function StoreAdd() {
         </Form>    
       </div>            
     </div>
+  </div>
   </div>
   )
 }

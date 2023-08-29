@@ -74,6 +74,7 @@ const onSubmit = (e) => {
 
 
   return (
+    <div className="itemeditpage">
     <div className="container pb-5">
     <div className="row">
       <div className= "col-md-4"></div>
@@ -191,6 +192,7 @@ const onSubmit = (e) => {
         </Form>    
       </div>            
     </div>
+  </div>
   </div>
   )
 }

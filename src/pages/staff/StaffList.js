@@ -148,6 +148,7 @@ function StaffList() {
 
 
   return (
+    <div className="staffpage">
     <div className="row justify-content-center"> 
     <h1 className="row justify-content-center mt-3">Staff List</h1>
       <div className="mt-4 col-md-10 m row justify-content-center">
@@ -172,6 +173,7 @@ function StaffList() {
         </DataTable>
 
   </div>
+</div>
 </div>
   )
 }

@@ -117,11 +117,12 @@ navigate(-1)
 
 
   return (
+    <div className="itemeditpage">
     <div className="container pb-5">
     <div className="row">
       <div className= "col-md-4"></div>
       <div className="col-md-4 ">
-        <h3 className="float-left mt-3">Add Item</h3>
+        <h3 className="float-left mt-3">Edit Item</h3>
         
         <Form onSubmit={onSubmit} 
         className="mt-4">
@@ -242,6 +243,7 @@ navigate(-1)
         </Form>    
       </div>            
     </div>
+  </div>
   </div>
   )
 }

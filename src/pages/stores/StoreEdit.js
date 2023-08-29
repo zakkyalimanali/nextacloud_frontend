@@ -78,6 +78,7 @@ function StoreEdit() {
 
 
   return (
+    <div className="storepage">
     <div className="container pb-5">
     <div className="row">
       <div className= "col-md-4"></div>
@@ -144,6 +145,7 @@ function StoreEdit() {
         </Form>    
       </div>            
     </div>
+  </div>
   </div>
   )
 }

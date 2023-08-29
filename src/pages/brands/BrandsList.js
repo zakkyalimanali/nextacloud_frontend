@@ -118,6 +118,7 @@ function BrandsList() {
   
 
   return (
+    <div className="brandpage">
     <div className="row justify-content-center"> 
     <h1 className="row justify-content-center mt-3">Brands List</h1>
       <div className="mt-4 col-md-10 m row justify-content-center">
@@ -142,6 +143,7 @@ function BrandsList() {
         </DataTable>
 
   </div>
+</div>
 </div>
   )
 }

@@ -229,6 +229,7 @@ function ItemsList() {
   
 
   return (
+    <div className="itempage">
     <div className="row justify-content-center"> 
     <h1 className="row justify-content-center mt-3">Item List</h1>
       <div className="mt-4 col-md-10 m row justify-content-center">
@@ -253,6 +254,7 @@ function ItemsList() {
         </DataTable>
 
   </div>
+</div>
 </div>
   )
 }

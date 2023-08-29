@@ -10,7 +10,6 @@ function PublicHome() {
       <div className="p-3 text-center HomeHeroText">
         <h1 className="HeroText">South Side Shoes</h1>
           <div>
-            
           <Link to="loginpage"><Button variant='warning'>Login</Button></Link>
           </div>
           

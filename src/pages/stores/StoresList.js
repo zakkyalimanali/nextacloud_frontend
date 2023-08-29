@@ -147,6 +147,7 @@ function StoresList() {
   
     
   return (
+    <div className="storepage">
     <div className="row justify-content-center"> 
     <h1 className="row justify-content-center mt-3">Stores List</h1>
       <div className="mt-4 col-md-10 m row justify-content-center">
@@ -171,6 +172,7 @@ function StoresList() {
         </DataTable>
 
   </div>
+</div>
 </div>
   )
 }

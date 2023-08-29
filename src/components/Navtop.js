@@ -29,8 +29,8 @@ export default function Navtop() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>
 
-                    <NavLink className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}  to="staffhome" >Staff Home</NavLink>
-                    <NavLink  className="mx-2" style={{color: '#E15047' , textDecoration:'none'}} to="stafflist" >Staff</NavLink>
+                    <NavLink className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}  to="staffhome" >Employee Home</NavLink>
+                    <NavLink  className="mx-2" style={{color: '#E15047' , textDecoration:'none'}} to="stafflist" >Staff Detail</NavLink>
                     <NavLink  className="mx-2" style={{color: '#E15047' , textDecoration:'none'}} to="brandslist" >Brands</NavLink>
                     <NavLink   className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}to="storeslist">Stores</NavLink>
                     <NavLink   className="mx-2" style={{color: '#E15047' , textDecoration:'none'}}to="itemslist">Items</NavLink>

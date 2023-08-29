@@ -61,7 +61,7 @@ function StoreAdd() {
             <Form.Label>Store Name</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Brand Name"
+              placeholder="Store Name"
               value={store_name}
               onChange={(e) => setStoreName(e.target.value)}
             />

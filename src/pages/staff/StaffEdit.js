@@ -2,11 +2,8 @@ import React , {useEffect , useState} from 'react'
 import StaffAPI from '../../API/StaffAPI';
 import StoresAPI from '../../API/StoresAPI';
 import axios from 'axios'
-import { ListGroup, Card, Button, Form } from "react-bootstrap";
-import { Link} from 'react-router-dom';
+import { Button, Form } from "react-bootstrap";
 import { useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash , faPen } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router'
 
 function StaffEdit() {
@@ -270,14 +267,6 @@ function StaffEdit() {
         
           
           <div className="mt-3 float-right">
-            {/* <Button
-              variant="primary"
-              type="submit"
-              onClick={onSubmit}
-              className="mx-2"
-            >
-              Save
-            </Button> */}
             <Button
                     variant="warning"
                     type="button"

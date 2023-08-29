@@ -7,7 +7,6 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
 
-  // localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null
   let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
   let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null);
   let [loading, setLoading] = useState(true)
@@ -16,7 +15,6 @@ export const AuthProvider = ({ children }) => {
 
   const loginUser = async (e) => {
     e.preventDefault();
-    // console.log('Form Submitted');
     let response = await fetch('http://127.0.0.1:8000/api/token/', {
         method:'POST',
         headers: {
@@ -26,14 +24,10 @@ export const AuthProvider = ({ children }) => {
         body: JSON.stringify({'username': e.target.username.value , 'password' : e.target.password.value})
     })
     let data = await response.json()
-    // console.log('data', data)
-    // console.log('response', response)
     if(response.status === 200) {
       setAuthTokens(data)
       setUser(jwt_decode(data.access))
       localStorage.setItem('authTokens' , JSON.stringify(data))
-      // navigate.push('/')
-      // navigate('/')
       navigate('staffhome')
     }else{
       alert('something went wrong')
@@ -73,9 +67,6 @@ export const AuthProvider = ({ children }) => {
   }
 
   const contextData = {
-    // loginUser,
-    // user,
-    // setUser,
     user : user,
     authTokens : authTokens,
     loginUser : loginUser,

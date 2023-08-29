@@ -1,5 +1,5 @@
 import {useEffect , useState} from 'react'
-import { ListGroup, Card, Button, Form } from 'react-bootstrap';
+import {  Button, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash , faPen } from '@fortawesome/free-solid-svg-icons'
@@ -107,10 +107,10 @@ function BrandsList() {
                   incidentProps[i] &&
                   incidentProps[i].toString().toLowerCase().includes(searchText)
                 ) {
-                  return true; // Return true if a match is found in any property
+                  return true; 
                 }
               }
-              return false; // Return false if no match is found in any property
+              return false;
             });
           setBrands(newData);
         }
@@ -127,9 +127,7 @@ function BrandsList() {
       Brands Add
   </Button>
   <div className="col-md-2 mb-4"><input className="text-center" type="text" placeholder="Search..." onChange={handleFilter}/></div>
-  {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
-  {/* <div className="text-end"><input type="text" /></div> */}
-      
+
 
     <DataTable className='table-container mb-5' 
            customStyles={customStyles}

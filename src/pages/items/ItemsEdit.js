@@ -3,11 +3,8 @@ import StoresAPI from '../../API/StoresAPI';
 import ItemsAPI from '../../API/ItemsAPI';
 import BrandsAPI from '../../API/BrandsAPI';
 import axios from 'axios'
-import { ListGroup, Card, Button, Form } from "react-bootstrap";
-import { Link} from 'react-router-dom';
+import { Button, Form } from "react-bootstrap";
 import { useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash , faPen } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router'
 
 function ItemsEdit() {
@@ -223,14 +220,6 @@ navigate(-1)
          
           
           <div className="mt-3 float-right">
-            {/* <Button
-              variant="primary"
-              type="submit"
-              onClick={onSubmit}
-              className="mx-2"
-            >
-              Save
-            </Button> */}
               <Button
                     variant="warning"
                     type="button"

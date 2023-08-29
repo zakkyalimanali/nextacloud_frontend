@@ -27,14 +27,11 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-        {/* <Route path='newhome' element={<NewHome/>} /> */}
         <Route path= '/' element={<PublicHome/>} />
         <Route path= 'register' element={<RegisterForm/>}/>
-          {/* <Route element={<AuthProvider><Layout/></AuthProvider>}> */}
           <Route element={<AuthProvider><Layout/></AuthProvider>}>
             <Route element={<LoginPage/>} path="/loginpage"/>
             <Route  element={<PrivateRoutes/>}>
-              {/* <Route path='/' element={<Home/>} exact/> */}
               <Route path='staffhome' element={<StaffHome/>} exact/>
               <Route path='brandslist' element={<BrandsList/>}/>
               <Route path='brandsadd' element={<BrandsAdd/>}/>
@@ -48,11 +45,6 @@ function App() {
               <Route path='stafflist' element={<StaffList/>}/>
               <Route path='staffadd' element={<StaffAdd/>}/>
               <Route path='staffedit/:id' element={<StaffEdit/>}/>
-              {/* <Route path="brandslist " element={<BrandsList/>}/>
-              <Route path="brandsadd " element={<BrandsAdd/>}/>
-              <Route path="brandsedit " element={<BrandsEdit/>}/> */}
-              {/* <Route path="incidentinvestigationadd" element={<IncidentInvestigationAdd/>}/>
-              <Route path="incidentinvestigationadd" element={<IncidentInvestigationAdd/>}/> */}
             </Route>
             <Route element={<LoginPage/>} path="/loginpage"/>
           </Route>

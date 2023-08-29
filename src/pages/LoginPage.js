@@ -15,11 +15,7 @@ const LoginPage = () => {
         <h1 className="mt-3 HeroText" style={{textAlign: 'center'}}>Login</h1>
           <div className="row">
             <div className="col-md-6 mx-auto">
-          {/* <form onSubmit={loginUser}>
-            <input type="text" name="username" placeholder="Enter Username"/>
-            <input type="password" name="password" placeholder="Enter Password"/>
-            <input type="submit" />
-          </form> */}
+
 
               <Form onSubmit={loginUser}>
                 <Form.Label className="mt-3">Username</Form.Label>
@@ -27,23 +23,22 @@ const LoginPage = () => {
                       type="text"
                       placeholder="Enter Username"
                       name ="username"
-                      // value={toolbox_date}
-                      // onChange={(e) => setToolBoxDate(e.target.value)}
+ 
                     />
 
-                {/* <input type="text" name="username" placeholder="Enter Username"/> */}
+            
                 <Form.Label className="mt-3">Password</Form.Label>
                   <Form.Control
                       type="password"
                       placeholder="Enter Password"
                       name="password"
                       />
-                {/* <input type="password" name="password" placeholder="Enter Password"/> */}
+  
                 <div className="justify-content-center text-center">
                   <Button className="mb-3 mt-3 me-3" type="submit">Submit</Button>
                   <Link className="me-3"to='/register' ><Button variant='warning'>Employee Registation</Button></Link>
                 </div>  
-                {/* <input type="submit" /> */}
+
               </Form>
             </div>
           </div>

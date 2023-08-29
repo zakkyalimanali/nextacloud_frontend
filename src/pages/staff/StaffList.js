@@ -1,5 +1,5 @@
 import {useEffect , useState} from 'react'
-import { ListGroup, Card, Button, Form } from 'react-bootstrap';
+import {  Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash , faPen } from '@fortawesome/free-solid-svg-icons'
@@ -72,13 +72,13 @@ function StaffList() {
           name: 'Staff Position',
           selector: (row) => row.staff_position,
           sortable: true,
-        //   width: '10rem'
+
         },
         {
           name: 'Store',
           selector: (row) => row.store,
           sortable: true,
-        //   width: '10rem'
+
         },
         
         {
@@ -97,7 +97,7 @@ function StaffList() {
         const data = staffs.map((staff) => {
             const kedai_store = stores.find((store) => store.id === staff.store);
             const kedai = kedai_store ? `${kedai_store.store_name}` : '';
-            // const kedai = kedai_store ? `${kedai_store.staff_name} (${employee_staff.staff_position})` : '';
+          
             return {
                 id : staff.id,
                 staff_name : staff.staff_name,
@@ -157,9 +157,7 @@ function StaffList() {
       Staff Add
   </Button>
   <div className="col-md-2 mb-4"><input className="text-center" type="text" placeholder="Search..." onChange={handleFilter}/></div>
-  {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
-  {/* <div className="text-end"><input type="text" /></div> */}
-      
+
 
     <DataTable className='table-container mb-5' 
            customStyles={customStyles}

@@ -1,5 +1,5 @@
 import {useEffect , useState} from 'react'
-import { ListGroup, Card, Button, Form } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash , faPen } from '@fortawesome/free-solid-svg-icons'
@@ -71,7 +71,7 @@ function StoresList() {
           name: 'Store Address',
           selector: (row) => row.store_address,
           sortable: true,
-        //   width: '10rem'
+
         },
         {
           name: 'Manager',
@@ -156,8 +156,6 @@ function StoresList() {
       Store Add
   </Button>
   <div className="col-md-2 mb-4"><input className="text-center" type="text" placeholder="Search..." onChange={handleFilter}/></div>
-  {/* <div className="text-end"><input type="text" onChange={handleFilter}/></div> */}
-  {/* <div className="text-end"><input type="text" /></div> */}
       
 
     <DataTable className='table-container mb-5' 
